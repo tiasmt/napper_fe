@@ -2,8 +2,8 @@
   <nav>
     <a href="/"><img class="logo" src="../assets/logo.png" alt="home" /></a>
     <ul class="main-nav">
-      <li><a href="#">Login</a></li>
-      <li><a  href="#">Register</a></li>
+      <router-link :to='{path:"/login"}' replace> Login </router-link>
+      <router-link :to='{path:"/register"}' replace> Register </router-link>
     </ul>
   </nav>
 </template>
