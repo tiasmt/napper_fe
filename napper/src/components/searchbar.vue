@@ -53,7 +53,7 @@ button {
   right: 0;
   width: 3rem;
   font-weight: bold;
-  background: rgba(0, 255, 136, 0.275);
+  background: rgba(2, 60, 33, 0.652);
   border-radius: 0 0.7rem 0.7rem 0;
   transition: opacity 0.5s ease-in-out;
 }
