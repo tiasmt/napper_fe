@@ -50,12 +50,6 @@ body {
   ##Screen = B/w 481px to 767px
 */
 @media (min-width: 481px) and (max-width: 767px) {
-  h2 {
-    font-size: 170%;
-  }
-  section {
-    font-size: 80%;
-  }
 }
 /* 
   ##Device = Most of the Smartphones Mobiles (Portrait)

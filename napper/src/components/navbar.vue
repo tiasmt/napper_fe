@@ -13,6 +13,7 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+
 a {
   text-decoration: none;
 }
@@ -21,30 +22,20 @@ ul {
   float: right;
   margin-right: 2%;
   display: inline-flex;
-  padding: 0;
   list-style: none;
 }
 
-button {
-  margin-left: 30%;
-}
 
 .nav-bar {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
   flex-direction: row;
   justify-content: space-between;
-  display: flex;
   color: white;
 }
 
 .main-nav a,
 .main-nav button {
   font-family: "Amatic SC", cursive;
-  padding: 10px 15px;
+  padding: 5px 15px;
   text-transform: uppercase;
   text-align: center;
   display: block;
@@ -52,12 +43,8 @@ button {
 }
 
 .logo {
-  width: 4%;
+  max-width: 35px;
   margin: 1%;
-}
-
-.main-nav {
-  margin-top: 2%;
 }
 
 .main-nav a {
@@ -76,5 +63,9 @@ button {
 .nav {
   display: flex;
 }
+
+nav {
+  height: 10vh;
+  }
 
 </style>
