@@ -1,32 +1,66 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <home></home>
   </div>
 </template>
 
+<script>
+// @ is an alias to /src
+import home from "@/views/Home.vue";
+
+export default {
+  components: {
+    home,
+  },
+};
+</script>
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html {
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
-#nav {
-  padding: 30px;
+body {
+  margin: 0px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+@media (min-width: 1025px) and (max-width: 1280px) {
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  h2 {
+    font-size: 170%;
+  }
+  section {
+    font-size: 80%;
+  }
+}
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
 }
 </style>
