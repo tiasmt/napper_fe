@@ -5,6 +5,7 @@
       <div class="container">
         <div class="main gradient">
           <img src="../assets/optimized/background.jpg" />
+          <searchbar></searchbar>
         </div>
         <div class="movies gradient">
           <p class="title">Movies</p>
@@ -19,9 +20,6 @@
           <img src="../assets/optimized/books.jpg" />
         </div>
       </div>
-      <div class="header-container">
-        <header class="header-text-box"></header>
-      </div>
     </div>
   </div>
 </template>
@@ -30,9 +28,11 @@
 // @ is an alias to /src
 
 import navbar from "../components/navbar";
+import searchbar from "../components/searchbar";
 export default {
   components: {
     navbar: navbar,
+    searchbar: searchbar
   },
 };
 </script>
