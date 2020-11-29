@@ -1,29 +1,29 @@
 <template>
-<div>
-  <navbar></navbar>
-  <div class="home">
-    <div class="container">
-      <div class="main gradient">
-        <img src="../assets/optimized/background.jpg" />
+  <div>
+    <navbar></navbar>
+    <div class="home">
+      <div class="container">
+        <div class="main gradient">
+          <img src="../assets/optimized/background.jpg" />
+        </div>
+        <div class="movies gradient">
+          <p class="title">Movies</p>
+          <img src="../assets/optimized/movies.jpg" />
+        </div>
+        <div class="series gradient">
+          <p class="title">Series</p>
+          <img src="../assets/optimized/series.jpg" />
+        </div>
+        <div class="books gradient">
+          <p class="title">Books</p>
+          <img src="../assets/optimized/books.jpg" />
+        </div>
       </div>
-      <div class="movies gradient">
-         <p class="title">Movies</p>
-        <img src="../assets/optimized/movies.jpg" />
+      <div class="header-container">
+        <header class="header-text-box"></header>
       </div>
-      <div class="series gradient">
-         <p class="title">Series</p>
-        <img src="../assets/optimized/series.jpg" />
-      </div>
-      <div class="books gradient">
-        <p class="title">Books</p>
-        <img src="../assets/optimized/books.jpg" />
-      </div>
-    </div>
-    <div class="header-container">
-      <header class="header-text-box"></header>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -62,6 +62,12 @@ export default {
 .books {
   grid-column-start: 4;
   grid-column-end: 5;
+  cursor: pointer;
+  width: 120%;
+  transition: 0.5s;
+  .title {
+    transition: 1s;
+  }
 }
 
 .movies {
@@ -84,6 +90,15 @@ img {
   z-index: -1;
   display: block;
   width: 100%;
+}
+
+.movies:hover, 
+.series:hover, 
+.books:hover {
+  width: 115%;
+  .title {
+    background-color: rgba(0, 255, 136, 0.172);
+  }
 }
 
 .title {

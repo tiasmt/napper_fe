@@ -52,7 +52,7 @@ ul {
   margin-left: 30px;
   border: 1px solid rgba(0, 255, 136, 0.124);
   border-radius: 10px;
-  transition: 0.3s ease;
+  transition: 1s;
 }
 
 .main-nav a:hover {
