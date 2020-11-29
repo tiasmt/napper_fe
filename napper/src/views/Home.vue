@@ -7,12 +7,15 @@
         <img src="../assets/optimized/background.jpg" />
       </div>
       <div class="movies gradient">
+         <p class="title">Movies</p>
         <img src="../assets/optimized/movies.jpg" />
       </div>
       <div class="series gradient">
+         <p class="title">Series</p>
         <img src="../assets/optimized/series.jpg" />
       </div>
       <div class="books gradient">
+        <p class="title">Books</p>
         <img src="../assets/optimized/books.jpg" />
       </div>
     </div>
@@ -81,5 +84,13 @@ img {
   z-index: -1;
   display: block;
   width: 100%;
+}
+
+.title {
+  font-family: "Amatic SC", cursive;
+  position: absolute;
+  background-color: rgba(0, 255, 136, 0.056);
+  border-radius: 10%;
+  padding: 3px 7px;
 }
 </style>
