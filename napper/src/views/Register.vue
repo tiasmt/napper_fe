@@ -4,20 +4,12 @@
     <form class="register-form" action="register">
       <div class="container">
         <h1>Register</h1>
-        <label for="name">Name</label>
+        <label for="email">email</label>
         <input
           type="text"
-          placeholder="Enter name"
-          name="name"
-          id="name"
-          required
-        />
-        <label for="surname">Surname</label>
-        <input
-          type="text"
-          placeholder="Enter surname"
-          name="surname"
-          id="surname"
+          placeholder="Enter email"
+          name="email"
+          id="email"
           required
         />
         <label for="username">Username</label>
