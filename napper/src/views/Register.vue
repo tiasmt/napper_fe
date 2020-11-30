@@ -29,7 +29,7 @@
           required
         />
       </div>
-      <button>Submit</button>
+      <button v-on:click="Register">Submit</button>
     </form>
   </div>
 </template>
@@ -38,6 +38,17 @@
 // @ is an alias to /src
 import navbar from "../components/navbar";
 export default {
+  data() {
+    return {
+      email: "",
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    Register() {
+    },
+  },
   components: {
     navbar: navbar,
   },
