@@ -26,7 +26,6 @@
 
 <script>
 // @ is an alias to /src
-
 import navbar from "../components/navbar";
 import searchbar from "../components/searchbar";
 export default {
@@ -98,6 +97,8 @@ img {
   width: 115%;
   .title {
     background-color: rgba(0, 255, 136, 0.172);
+    border-radius: 5px;
+    padding: 3px 25px;
   }
 }
 
@@ -105,7 +106,7 @@ img {
   font-family: "Amatic SC", cursive;
   position: absolute;
   background-color: rgba(0, 255, 136, 0.056);
-  border-radius: 10%;
+  border-radius: 5px;
   padding: 3px 7px;
 }
 </style>
