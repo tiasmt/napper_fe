@@ -37,6 +37,8 @@
 <script>
 // @ is an alias to /src
 import navbar from "../components/navbar";
+import axios from "axios";
+import { apiHost } from "@/main.js";
 export default {
   data() {
     return {
@@ -46,7 +48,23 @@ export default {
     };
   },
   methods: {
+
+
     Register() {
+          var username = "test";
+          var password = "testpass";
+          var email = "testemail";
+      axios.post(apiHost + "/register", {
+          // Overwrite Axios's automatically set Content-Type
+          "Content-Type": "application/json",
+        },
+        {
+          data : {
+                      "Username": username,
+                      "Password": password,  
+                      "Email": email       
+          }
+      });
     },
   },
   components: {
