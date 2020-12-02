@@ -1,11 +1,12 @@
 <template>
   <div>
     <navbar></navbar>
-    <form class="register-form" action="register">
+    <form class="register-form">
       <div class="container">
         <h1>Register</h1>
         <label for="email">email</label>
         <input
+          v-model="email"
           type="text"
           placeholder="Enter email"
           name="email"
@@ -14,6 +15,7 @@
         />
         <label for="username">Username</label>
         <input
+          v-model="username"
           type="text"
           placeholder="Enter username"
           name="username"
@@ -22,6 +24,7 @@
         />
         <label for="password">Password</label>
         <input
+          v-model="password"
           type="password"
           placeholder="Enter password"
           name="password"
@@ -48,24 +51,12 @@ export default {
     };
   },
   methods: {
-
-
     Register() {
-          var username = "test";
-          var password = "testpass";
-          var email = "testemail";
-      axios.post(apiHost + "/register", {
-          // Overwrite Axios's automatically set Content-Type
-          "Content-Type": "application/json",
-        },
-        {
-          data : {
-                      "Username": username,
-                      "Password": password,  
-                      "Email": email       
-          }
-      });
-    },
+    var body = {"Username": this.username, "Email": this.email, "Password": this.password};
+     axios.post(apiHost + "/register", body, {
+                  'Content-Type': 'application/json'
+                });
+    }
   },
   components: {
     navbar: navbar,
