@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar></navbar>
-    <form class="register-form">
+    <form class="register-form" method="POST" action="#">
       <div class="container">
         <h1>Register</h1>
         <label for="email">email</label>
@@ -51,7 +51,8 @@ export default {
     };
   },
   methods: {
-    Register() {
+    Register(e) {
+      e.preventDefault();
     var body = {"Username": this.username, "Email": this.email, "Password": this.password};
      axios.post(apiHost + "/register", body, {
                   'Content-Type': 'application/json'
