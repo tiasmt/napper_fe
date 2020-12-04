@@ -79,7 +79,7 @@ h1 {
 .register-form {
   border: 1px solid rgba(0, 255, 136, 0.029);
   background-color: rgba(0, 255, 136, 0.076);
-  border-radius: 5%;
+  border-radius: 3%;
   width: 40%;
   margin-left: 30%;
   margin-top: 10%;
