@@ -48,16 +48,32 @@ export default {
       email: "",
       username: "",
       password: "",
+      isLoggedIn: false,
     };
   },
   methods: {
     Register(e) {
       e.preventDefault();
-    var body = {"Username": this.username, "Email": this.email, "Password": this.password};
-     axios.post(apiHost + "/register", body, {
-                  'Content-Type': 'application/json'
-                });
-    }
+      var body = {
+        Username: this.username,
+        Email: this.email,
+        Password: this.password,
+      };
+      axios
+        .post(apiHost + "/register", body, {
+          "Content-Type": "application/json",
+        })
+        .then((response) => {
+          if(response.statuscode == 201)
+          {
+            //If correct status redirect to Profile
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+          //show exception under register
+        });
+    },
   },
   components: {
     navbar: navbar,
