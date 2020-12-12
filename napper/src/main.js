@@ -13,6 +13,11 @@ if (process.env.NODE_ENV === 'production') {
 
 export const apiHost = baseUrl;
 
+// Require dependencies
+var VueCookie = require('vue-cookie');
+// Tell Vue to use the plugin
+Vue.use(VueCookie);
+
 new Vue({
   router,
   render: h => h(App)
