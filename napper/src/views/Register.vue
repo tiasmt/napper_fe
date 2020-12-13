@@ -32,7 +32,7 @@
           required
         />
       </div>
-      <button v-on:click="Register">Submit</button>
+      <button @click="Register">Submit</button>
     </form>
   </div>
 </template>
@@ -66,7 +66,9 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             //If correct status redirect to Profile
-            this.$cookie.set('jwt', response.data.token, 1);
+            this.$store.state.isAuthenticated = true;
+            this.$cookies.set('jwt', response.data.token, 1);
+            this.$router.repalce({ path: '/' });
           }
         })
         .catch((e) => {

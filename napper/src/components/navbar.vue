@@ -2,18 +2,53 @@
   <nav>
     <a href="/"><img class="logo" src="../assets/logo.png" alt="home" /></a>
     <ul class="main-nav">
-      <router-link :to='{path:"/login"}' replace> Login </router-link>
-      <router-link :to='{path:"/register"}' replace> Register </router-link>
+      <router-link
+        :to="{ path: '/login' }"
+        replace
+        v-if="!this.$store.state.isAuthenticated"
+      >
+        Login
+      </router-link>
+      <router-link
+        :to="{ path: '/register' }"
+        replace
+        v-if="!this.$store.state.isAuthenticated"
+      >
+        Register
+      </router-link>
+            <router-link
+        :to="{ path: '/dash' }"
+        replace
+        v-if="this.$store.state.isAuthenticated"
+        class="profile"
+      >
+        T
+      </router-link>
+      <router-link
+        :to="{ path: '/' }"
+        replace
+        v-if="this.$store.state.isAuthenticated"
+        v-on:click.native="Logout"
+      >
+        Logout
+      </router-link>
+
     </ul>
   </nav>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    Logout() {
+      console.log("test");
+      this.$store.state.isAuthenticated = false;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 a {
   text-decoration: none;
 }
@@ -24,7 +59,6 @@ ul {
   display: inline-flex;
   list-style: none;
 }
-
 
 .nav-bar {
   flex-direction: row;
@@ -41,6 +75,18 @@ ul {
   display: block;
   color: white;
 }
+
+.main-nav .profile {
+  background-color: rgba(0, 255, 136, 0.227);
+  border-radius: 50%;
+ 
+}
+
+.main-nav .profile:hover {
+  background-color: rgba(0, 255, 136, 0.426);
+}
+
+
 
 .logo {
   max-width: 35px;
@@ -66,6 +112,5 @@ ul {
 
 nav {
   height: 10vh;
-  }
-
+}
 </style>

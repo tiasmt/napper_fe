@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import Vuex from 'vuex'
 
 Vue.config.productionTip = false
 
@@ -12,14 +13,22 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 export const apiHost = baseUrl;
-
 // Require dependencies
-var VueCookie = require('vue-cookie');
-Vue.$cookies.config('7d','','',true);
+var VueCookies = require('vue-cookies');
+
+
 // Tell Vue to use the plugin
-Vue.use(VueCookie);
+Vue.use(VueCookies);
+
+Vue.use(Vuex);
+const store = new Vuex.Store({
+   state: {
+     isAuthenticated: false
+   }
+ });
 
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
+  store
 }).$mount('#app')

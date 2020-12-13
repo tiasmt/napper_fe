@@ -23,7 +23,7 @@
           required
         />
       </div>
-      <button v-on:click="Login">Submit</button>
+      <button @click="Login">Submit</button>
     </form>
   </div>
 </template>
@@ -44,14 +44,22 @@ export default {
   methods: {
     Login(e) {
       e.preventDefault();
-    var body = {"Username": this.username, "Password": this.password};
-    axios.post(apiHost + "/login", body, {
-                  'Content-Type': 'application/json'
-                }).then((response) => {
-                  if (response.status == 200) 
-                    this.$cookie.set('jwt', response.data.token, 1);
-                })
-    }
+      var body = { Username: this.username, Password: this.password };
+      axios
+        .post(apiHost + "/login", body, {
+          "Content-Type": "application/json",
+        })
+        .then((response) => {
+          if (response.status == 200) {
+            this.$store.state.isAuthenticated = true;
+            this.$cookies.set("jwt", response.data.token, 1);
+            this.$router.replace({ path: '/' });
+          }
+        }).catch((e) => {
+          console.log(e);
+          //show exception under register
+        });
+    },
   },
   components: {
     navbar: navbar,
