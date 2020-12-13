@@ -64,9 +64,9 @@ export default {
           "Content-Type": "application/json",
         })
         .then((response) => {
-          if(response.statuscode == 201)
-          {
+          if (response.status == 200) {
             //If correct status redirect to Profile
+            this.$cookie.set('jwt', response.data.token, 1);
           }
         })
         .catch((e) => {

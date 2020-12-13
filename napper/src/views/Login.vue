@@ -1,5 +1,5 @@
 <template>
-<div>
+  <div>
     <navbar></navbar>
     <form class="login-form" method="POST" action="#">
       <div class="container">
@@ -23,7 +23,7 @@
           required
         />
       </div>
-      <button v-on:click="Register">Submit</button>
+      <button v-on:click="Login">Submit</button>
     </form>
   </div>
 </template>
@@ -42,12 +42,15 @@ export default {
     };
   },
   methods: {
-    Register(e) {
+    Login(e) {
       e.preventDefault();
     var body = {"Username": this.username, "Password": this.password};
-     axios.post(apiHost + "/login", body, {
+    axios.post(apiHost + "/login", body, {
                   'Content-Type': 'application/json'
-                });
+                }).then((response) => {
+                  if (response.status == 200) 
+                    this.$cookie.set('jwt', response.data.token, 1);
+                })
     }
   },
   components: {
