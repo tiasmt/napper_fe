@@ -15,6 +15,7 @@ export const apiHost = baseUrl;
 
 // Require dependencies
 var VueCookie = require('vue-cookie');
+Vue.$cookies.config('7d','','',true);
 // Tell Vue to use the plugin
 Vue.use(VueCookie);
 
