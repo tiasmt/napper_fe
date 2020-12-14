@@ -33,8 +33,8 @@ export default {
     navbar: navbar,
     searchbar: searchbar,
   },
-  mounted() {
-    this.$cookies.config('7d','','',true);
+  created() {
+    this.$store.dispatch("AutoLogin");
   },
 };
 </script>

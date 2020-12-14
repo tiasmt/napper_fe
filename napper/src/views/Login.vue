@@ -31,8 +31,6 @@
 <script>
 // @ is an alias to /src
 import navbar from "../components/navbar";
-import axios from "axios";
-import { apiHost } from "@/main.js";
 
 export default {
   data() {
@@ -44,21 +42,8 @@ export default {
   methods: {
     Login(e) {
       e.preventDefault();
-      var body = { Username: this.username, Password: this.password };
-      axios
-        .post(apiHost + "/login", body, {
-          "Content-Type": "application/json",
-        })
-        .then((response) => {
-          if (response.status == 200) {
-            this.$store.state.isAuthenticated = true;
-            this.$cookies.set("jwt", response.data.token, 1);
-            this.$router.replace({ path: '/' });
-          }
-        }).catch((e) => {
-          console.log(e);
-          //show exception under register
-        });
+      this.$store.dispatch('Login', {username: this.username, password: this.password});
+
     },
   },
   components: {

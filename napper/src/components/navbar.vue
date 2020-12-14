@@ -5,21 +5,21 @@
       <router-link
         :to="{ path: '/login' }"
         replace
-        v-if="!this.$store.state.isAuthenticated"
+        v-if="!auth"
       >
         Login
       </router-link>
       <router-link
         :to="{ path: '/register' }"
         replace
-        v-if="!this.$store.state.isAuthenticated"
+        v-if="!auth"
       >
         Register
       </router-link>
             <router-link
         :to="{ path: '/dash' }"
         replace
-        v-if="this.$store.state.isAuthenticated"
+        v-if="auth"
         class="profile"
       >
         T
@@ -27,7 +27,7 @@
       <router-link
         :to="{ path: '/' }"
         replace
-        v-if="this.$store.state.isAuthenticated"
+        v-if="auth"
         v-on:click.native="Logout"
       >
         Logout
@@ -39,10 +39,14 @@
 
 <script>
 export default {
+  computed: {
+    auth () {
+        return this.$store.getters.ifAuthenticated;
+      }
+  },
   methods: {
     Logout() {
-      console.log("test");
-      this.$store.state.isAuthenticated = false;
+      this.$store.dispatch('Logout');
     },
   },
 };
