@@ -31,7 +31,10 @@ import searchbar from "../components/searchbar";
 export default {
   components: {
     navbar: navbar,
-    searchbar: searchbar
+    searchbar: searchbar,
+  },
+  created() {
+    this.$store.dispatch("AutoLogin");
   },
 };
 </script>
@@ -91,8 +94,8 @@ img {
   width: 100%;
 }
 
-.movies:hover, 
-.series:hover, 
+.movies:hover,
+.series:hover,
 .books:hover {
   width: 115%;
   .title {

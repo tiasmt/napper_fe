@@ -23,7 +23,7 @@
           required
         />
       </div>
-      <button v-on:click="Login">Submit</button>
+      <button @click="Login">Submit</button>
     </form>
   </div>
 </template>
@@ -31,8 +31,6 @@
 <script>
 // @ is an alias to /src
 import navbar from "../components/navbar";
-import axios from "axios";
-import { apiHost } from "@/main.js";
 
 export default {
   data() {
@@ -44,14 +42,9 @@ export default {
   methods: {
     Login(e) {
       e.preventDefault();
-    var body = {"Username": this.username, "Password": this.password};
-    axios.post(apiHost + "/login", body, {
-                  'Content-Type': 'application/json'
-                }).then((response) => {
-                  if (response.status == 200) 
-                    this.$cookie.set('jwt', response.data.token, 1);
-                })
-    }
+      this.$store.dispatch('Login', {username: this.username, password: this.password});
+
+    },
   },
   components: {
     navbar: navbar,

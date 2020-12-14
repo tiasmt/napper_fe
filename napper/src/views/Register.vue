@@ -32,7 +32,7 @@
           required
         />
       </div>
-      <button v-on:click="Register">Submit</button>
+      <button @click="Register">Submit</button>
     </form>
   </div>
 </template>
@@ -40,8 +40,6 @@
 <script>
 // @ is an alias to /src
 import navbar from "../components/navbar";
-import axios from "axios";
-import { apiHost } from "@/main.js";
 export default {
   data() {
     return {
@@ -54,25 +52,7 @@ export default {
   methods: {
     Register(e) {
       e.preventDefault();
-      var body = {
-        Username: this.username,
-        Email: this.email,
-        Password: this.password,
-      };
-      axios
-        .post(apiHost + "/register", body, {
-          "Content-Type": "application/json",
-        })
-        .then((response) => {
-          if (response.status == 200) {
-            //If correct status redirect to Profile
-            this.$cookie.set('jwt', response.data.token, 1);
-          }
-        })
-        .catch((e) => {
-          console.log(e);
-          //show exception under register
-        });
+      this.$store.dispatch('Register', {email:this.email, username: this.username, password: this.password});
     },
   },
   components: {
