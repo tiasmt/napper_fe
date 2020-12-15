@@ -76,6 +76,8 @@ ul {
 
 .main-nav .profile:hover {
   background-color: rgba(0, 255, 136, 0.426);
+  width: 20%;
+  border-radius: 35%;
 }
 
 .logo {
