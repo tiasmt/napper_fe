@@ -9,7 +9,7 @@
         Register
       </router-link>
       <router-link :to="{ path: '/dash' }" replace v-if="auth" class="profile">
-        T
+        {{username}}
       </router-link>
       <router-link
         :to="{ path: '/' }"
@@ -29,6 +29,9 @@ export default {
     auth() {
       return this.$store.getters.ifAuthenticated;
     },
+    username() {
+      return this.$store.getters.username.charAt(0);
+    }
   },
   methods: {
     Logout() {

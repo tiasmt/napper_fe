@@ -11,19 +11,21 @@ export default new Vuex.Store({
     state: {
         token: null,
         userId: null,
-        user: null,
+        username: null,
         errorMessage: ''
     },
     mutations: {
         authUser(state, userData) {
-            state.token = userData.token
-            state.userId = userData.userId
-            state.errorMessage = ''
+            state.token = userData.token;
+            state.userId = userData.userId;
+            state.username = userData.username;
+            state.errorMessage = '';
         },
         clearAuth(state) {
-            state.token = null
-            state.userId = null
-            state.errorMessage = ''
+            state.token = null;
+            state.userId = null;
+            state.username = null,
+            state.errorMessage = '';
         },
         setError(state, error) {
             state.errorMessage = error.Message
@@ -46,10 +48,13 @@ export default new Vuex.Store({
                 .then((response) => {
                     if (response.status == 200) {
                         window.$cookies.set("token", response.data.token);
+                        window.$cookies.set("userId", response.data.id);
+                        window.$cookies.set("username", response.data.username);
                         router.replace({ path: '/' });
                         commit('authUser', {
                             token: response.data.token,
-                            userId: response.data.userId
+                            userId: response.data.id,
+                            username: response.data.username
                         });
                     }
                 })
@@ -64,10 +69,12 @@ export default new Vuex.Store({
             if (!token) {
                 return
             }
-            const userId = window.$cookies.get('userId')
+            const userId = window.$cookies.get('userId');
+            const username = window.$cookies.get('username');
             commit('authUser', {
                 token: token,
-                userId: userId
+                userId: userId,
+                username: username
             })
         },
         Login({ commit }, authData) {
@@ -82,7 +89,8 @@ export default new Vuex.Store({
                         router.replace({ path: '/' });
                         commit('authUser', {
                             token: response.data.token,
-                            userId: response.data.userId
+                            userId: response.data.id,
+                            username: response.data.username,
                         });
                     }
                 })
@@ -111,6 +119,9 @@ export default new Vuex.Store({
         },
         ifError(state) {
             return state.errorMessage !== '';
+        },
+        username(state) {
+            return state.username;
         }
     }
 
