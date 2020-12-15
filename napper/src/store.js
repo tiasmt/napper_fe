@@ -27,6 +27,9 @@ export default new Vuex.Store({
         },
         setError(state, error) {
             state.errorMessage = error.Message
+        },
+        clearError(state) {
+            state.errorMessage = ''
         }
     },
     actions: {
@@ -94,6 +97,9 @@ export default new Vuex.Store({
             window.$cookies.remove('token');
             window.$cookies.remove('userId');
             router.replace('/');
+        },
+        ClearError({commit}) {
+            commit('clearError');
         }
     },
     getters: {

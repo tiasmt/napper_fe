@@ -2,26 +2,13 @@
   <nav>
     <a href="/"><img class="logo" src="../assets/logo.png" alt="home" /></a>
     <ul class="main-nav">
-      <router-link
-        :to="{ path: '/login' }"
-        replace
-        v-if="!auth"
-      >
+      <router-link :to="{ path: '/login' }" replace v-if="!auth">
         Login
       </router-link>
-      <router-link
-        :to="{ path: '/register' }"
-        replace
-        v-if="!auth"
-      >
+      <router-link :to="{ path: '/register' }" replace v-if="!auth">
         Register
       </router-link>
-            <router-link
-        :to="{ path: '/dash' }"
-        replace
-        v-if="auth"
-        class="profile"
-      >
+      <router-link :to="{ path: '/dash' }" replace v-if="auth" class="profile">
         T
       </router-link>
       <router-link
@@ -32,7 +19,6 @@
       >
         Logout
       </router-link>
-
     </ul>
   </nav>
 </template>
@@ -40,13 +26,13 @@
 <script>
 export default {
   computed: {
-    auth () {
-        return this.$store.getters.ifAuthenticated;
-      }
+    auth() {
+      return this.$store.getters.ifAuthenticated;
+    },
   },
   methods: {
     Logout() {
-      this.$store.dispatch('Logout');
+      this.$store.dispatch("Logout");
     },
   },
 };
@@ -83,14 +69,11 @@ ul {
 .main-nav .profile {
   background-color: rgba(0, 255, 136, 0.227);
   border-radius: 50%;
- 
 }
 
 .main-nav .profile:hover {
   background-color: rgba(0, 255, 136, 0.426);
 }
-
-
 
 .logo {
   max-width: 35px;

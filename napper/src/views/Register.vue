@@ -33,6 +33,7 @@
         />
       </div>
       <button @click="Register">Submit</button>
+      <div v-if="ifError" class="error">{{ error }}</div>
     </form>
   </div>
 </template>
@@ -41,6 +42,14 @@
 // @ is an alias to /src
 import navbar from "../components/navbar";
 export default {
+  computed: {
+    error() {
+      return this.$store.getters.errorMessage;
+    },
+    ifError() {
+      return this.$store.getters.ifError;
+    },
+  },
   data() {
     return {
       email: "",
@@ -52,7 +61,11 @@ export default {
   methods: {
     Register(e) {
       e.preventDefault();
-      this.$store.dispatch('Register', {email:this.email, username: this.username, password: this.password});
+      this.$store.dispatch("Register", {
+        email: this.email,
+        username: this.username,
+        password: this.password,
+      });
     },
   },
   components: {
@@ -64,7 +77,8 @@ export default {
 <style lang="scss" scoped>
 form,
 form button,
-form input {
+form input,
+.error {
   font-family: "Amatic SC", cursive;
 }
 
@@ -115,5 +129,12 @@ button {
 
 button:hover {
   background-color: rgba(0, 255, 136, 0.604);
+}
+
+.error {
+  border: 1px solid rgba(255, 17, 0, 0.029);
+  background-color: rgba(255, 38, 0, 0.261);
+  border-radius: 3%;
+  text-align: center;
 }
 </style>
