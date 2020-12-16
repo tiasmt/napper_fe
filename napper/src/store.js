@@ -11,7 +11,7 @@ export default new Vuex.Store({
     state: {
         token: null,
         userId: null,
-        username: null,
+        username: 'FakeUser',
         errorMessage: ''
     },
     mutations: {
@@ -86,6 +86,8 @@ export default new Vuex.Store({
                 .then((response) => {
                     if (response.status == 200) {
                         window.$cookies.set("token", response.data.token);
+                        window.$cookies.set("userId", response.data.id);
+                        window.$cookies.set("username", response.data.username);
                         router.replace({ path: '/' });
                         commit('authUser', {
                             token: response.data.token,
@@ -104,6 +106,7 @@ export default new Vuex.Store({
             commit('clearAuth');
             window.$cookies.remove('token');
             window.$cookies.remove('userId');
+            window.$cookies.remove('username');
             router.replace('/');
         },
         ClearError({commit}) {
