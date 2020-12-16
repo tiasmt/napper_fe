@@ -1,6 +1,7 @@
 <template>
   <div>
     <navbar></navbar>
+    <usermenu></usermenu>
     <div class="home">
       <div class="container">
         <div class="main gradient">
@@ -28,10 +29,12 @@
 // @ is an alias to /src
 import navbar from "../components/navbar";
 import searchbar from "../components/searchbar";
+import usermenu from "../components/usermenu";
 export default {
   components: {
     navbar: navbar,
     searchbar: searchbar,
+    usermenu: usermenu
   },
   created() {
     this.$store.dispatch("AutoLogin");
