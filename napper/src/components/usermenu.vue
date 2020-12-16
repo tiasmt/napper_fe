@@ -58,13 +58,13 @@ a {
   transition: 0.7s;
 }
 li {
-  margin-top: 5%;
+  margin-top: 15%;
   transition: 0.7s;
 }
 li:hover{
   border-radius: 2%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 8%;
+  padding-bottom: 8%;
   padding-left: 5%;
   background-color: rgba(0, 255, 136, 0.261);
 }
