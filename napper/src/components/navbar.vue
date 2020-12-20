@@ -90,7 +90,7 @@ ul {
   margin-left: 30px;
   border: 1px solid rgba(0, 255, 136, 0.124);
   border-radius: 10px;
-  transition: 1s;
+  transition: 0.7s;
 }
 
 .main-nav a:hover {

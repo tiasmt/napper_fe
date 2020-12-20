@@ -71,7 +71,7 @@ export default {
   width: 120%;
   transition: 0.5s;
   .title {
-    transition: 1s;
+    transition: 0.7s;
   }
 }
 

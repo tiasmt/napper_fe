@@ -31,17 +31,18 @@ export default {};
 .user-menu {
   position: fixed;
   height: 100vh;
-  width: 15%;
-  font-size: 25px;
+  width: 13%;
+  font-size: 20px;
   font-family: 'Open Sans Condensed', sans-serif;
   background-color: rgba(0, 255, 136, 0.042);
+  text-transform: uppercase;
 }
 ul {
   list-style-type: none;
   position: relative;
   top: 15%;
-  left: -16%;
-  width: 100%;
+  left: -18%;
+  width: 85%;
 }
 a:link {
   text-decoration: none;
@@ -59,13 +60,14 @@ a {
 }
 li {
   margin-top: 15%;
-  transition: 0.7s;
+  transition: 0.6s;
+  padding-top: 4%;
+  padding-bottom: 4%;
 }
 li:hover{
-  border-radius: 2%;
-  padding-top: 8%;
-  padding-bottom: 8%;
-  padding-left: 5%;
+  border-radius: 5%;
+  padding-left: 15%;
   background-color: rgba(0, 255, 136, 0.261);
+
 }
 </style>
