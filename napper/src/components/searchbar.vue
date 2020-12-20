@@ -28,7 +28,7 @@ export default {};
 input,
 button {
   height: 2rem;
-  font-family: "Amatic SC", cursive;
+  font-family: 'Open Sans Condensed', sans-serif;
   border: 0;
   color: white;
   font-size: 1.2rem;

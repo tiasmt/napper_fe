@@ -61,7 +61,7 @@ ul {
 
 .main-nav a,
 .main-nav button {
-  font-family: "Amatic SC", cursive;
+  font-family: 'Open Sans Condensed', sans-serif;
   padding: 5px 15px;
   text-transform: uppercase;
   text-align: center;

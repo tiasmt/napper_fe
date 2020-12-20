@@ -33,7 +33,7 @@ export default {};
   height: 100vh;
   width: 15%;
   font-size: 25px;
-  font-family: "Amatic SC", cursive;
+  font-family: 'Open Sans Condensed', sans-serif;
   background-color: rgba(0, 255, 136, 0.042);
 }
 ul {

@@ -109,10 +109,11 @@ img {
 }
 
 .title {
-  font-family: "Amatic SC", cursive;
+  font-family: 'Open Sans Condensed', sans-serif;
   position: absolute;
   background-color: rgba(0, 255, 136, 0.056);
   border-radius: 5px;
   padding: 3px 7px;
+  text-transform: uppercase;
 }
 </style>
