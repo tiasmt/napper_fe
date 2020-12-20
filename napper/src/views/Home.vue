@@ -59,7 +59,8 @@ export default {
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 4;
-  width: 100%;
+  width: 82%;
+  margin-left: 18%;
 }
 
 .movies,
@@ -114,6 +115,6 @@ img {
   background-color: rgba(0, 255, 136, 0.056);
   border-radius: 5px;
   padding: 3px 7px;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 }
 </style>
