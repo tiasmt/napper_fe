@@ -1,5 +1,5 @@
 <template>
-  <div class="searchbar">
+  <div class="searchbar" :class="{ searchbar_auth: auth }">
     <input
       id="search"
       type="search"
@@ -12,23 +12,34 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    auth() {
+      return this.$store.getters.ifAuthenticated;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 // Main styles
 .searchbar {
   top: 40%;
-  left: 30%;
+  left: 20%;
   position: absolute;
   width: 25%;
   border-radius: 0.9rem;
 }
 
+.searchbar_auth {
+  top:40%;
+  left:32%;
+}
+
 input,
 button {
   height: 2rem;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   border: 0;
   color: white;
   font-size: 1.2rem;
