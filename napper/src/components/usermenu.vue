@@ -77,7 +77,7 @@ h3{
   font-weight: 300;
   margin-left: 9%;
   margin-bottom: 8%;
-  color: rgba(93, 102, 93, 0.83);
+  color: rgba(61, 96, 61, 0.83);
 }
 
 

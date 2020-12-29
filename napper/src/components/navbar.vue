@@ -71,7 +71,7 @@ ul {
 .main-nav .profile {
   background-color: rgba(0, 255, 136, 0.227);
   border-radius: 50%;
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .main-nav .profile:hover {
@@ -81,7 +81,7 @@ ul {
 
 .logo {
   max-width: 35px;
-  margin: 1%;
+  margin: 10px;
 }
 
 .main-nav a {
@@ -97,11 +97,15 @@ ul {
   background-color: rgba(0, 255, 136, 0.426);
 }
 
+.main-nav {
+  margin: 10px;
+}
+
 .nav {
   display: flex;
 }
 
 nav {
-  height: 10vh;
+  height: 7vh;
 }
 </style>

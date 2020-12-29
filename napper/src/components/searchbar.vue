@@ -18,8 +18,8 @@ export default {};
 <style lang="scss" scoped>
 // Main styles
 .searchbar {
-  top: 50%;
-  left: 25%;
+  top: 40%;
+  left: 30%;
   position: absolute;
   width: 25%;
   border-radius: 0.9rem;

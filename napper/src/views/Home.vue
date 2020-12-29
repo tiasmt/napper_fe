@@ -46,8 +46,9 @@ export default {
 .container {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%; /* 4 columns */
-  grid-auto-rows: 30vh;
+  grid-auto-rows: 31vh;
   overflow: hidden;
+  width: 100%;
 }
 
 .gradient {
@@ -116,5 +117,9 @@ img {
   border-radius: 5px;
   padding: 3px 7px;
   // text-transform: uppercase;
+}
+
+.home {
+  height: 93vh;
 }
 </style>
