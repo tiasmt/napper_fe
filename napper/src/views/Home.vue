@@ -9,16 +9,22 @@
           <searchbar></searchbar>
         </div>
         <div class="movies gradient" :class="{auth_types:auth}">
+          <router-link :to="{ path: '/movies' }">
           <p class="title">Movies</p>
           <img src="../assets/optimized/movies.jpg" />
+          </router-link>
         </div>
         <div class="series gradient" :class="{auth_types:auth}">
+          <router-link :to="{ path: '/series' }">
           <p class="title">Series</p>
           <img src="../assets/optimized/series.jpg" />
+          </router-link>
         </div>
         <div class="books gradient" :class="{auth_types:auth}">
+          <router-link :to="{ path: '/books' }">
           <p class="title">Books</p>
           <img src="../assets/optimized/books.jpg" />
+          </router-link>
         </div>
       </div>
     </div>
@@ -43,11 +49,15 @@ export default {
     auth() {
       return this.$store.getters.ifAuthenticated;
     },
-  },
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+a {
+  color: white;
+}
+ 
 .container {
   display: grid;
   grid-template-columns: 33% 33% 33%; /* 3 columns */
