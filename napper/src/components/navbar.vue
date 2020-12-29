@@ -3,7 +3,7 @@
     <a href="/"><img class="logo" src="../assets/logo.png" alt="home" /></a>
     <ul class="main-nav">
       <router-link :to="{ path: '/login' }" replace v-if="!auth">
-        Login
+        Log In
       </router-link>
       <router-link :to="{ path: '/register' }" replace v-if="!auth">
         Register
@@ -17,7 +17,7 @@
         v-if="auth"
         v-on:click.native="Logout"
       >
-        Logout
+        Log Out
       </router-link>
     </ul>
   </nav>
@@ -61,9 +61,8 @@ ul {
 
 .main-nav a,
 .main-nav button {
-  font-family: "Amatic SC", cursive;
+  font-family: 'Open Sans Condensed', sans-serif;
   padding: 5px 15px;
-  text-transform: uppercase;
   text-align: center;
   display: block;
   color: white;
@@ -72,17 +71,17 @@ ul {
 .main-nav .profile {
   background-color: rgba(0, 255, 136, 0.227);
   border-radius: 50%;
+  text-transform: uppercase;
 }
 
 .main-nav .profile:hover {
   background-color: rgba(0, 255, 136, 0.426);
-  width: 20%;
   border-radius: 35%;
 }
 
 .logo {
   max-width: 35px;
-  margin: 1%;
+  margin: 10px;
 }
 
 .main-nav a {
@@ -90,7 +89,7 @@ ul {
   margin-left: 30px;
   border: 1px solid rgba(0, 255, 136, 0.124);
   border-radius: 10px;
-  transition: 1s;
+  transition: 0.7s;
 }
 
 .main-nav a:hover {
@@ -98,11 +97,15 @@ ul {
   background-color: rgba(0, 255, 136, 0.426);
 }
 
+.main-nav {
+  margin: 10px;
+}
+
 .nav {
   display: flex;
 }
 
 nav {
-  height: 10vh;
+  height: 7vh;
 }
 </style>

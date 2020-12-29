@@ -22,7 +22,7 @@ export default {
 html {
   background: rgba(0, 0, 0, 0.95);
   color: white;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 300;
   font-size: 20px;
   text-rendering: optimizeLegibility;

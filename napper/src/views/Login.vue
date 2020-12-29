@@ -68,12 +68,13 @@ form,
 form button,
 form input,
 .error {
-  font-family: "Amatic SC", cursive;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 h1 {
   margin-left: 40%;
   display: block;
+  text-transform: uppercase;
 }
 .login-form {
   border: 1px solid rgba(0, 255, 136, 0.029);
@@ -101,6 +102,7 @@ label {
   display: inline-block;
   width: 35%;
   text-align: right;
+  text-transform: uppercase;
 }
 
 button {
@@ -114,6 +116,7 @@ button {
   margin-bottom: 5%;
   cursor: pointer;
   font-size: 105%;
+  text-transform: uppercase;
 }
 
 button:hover {
